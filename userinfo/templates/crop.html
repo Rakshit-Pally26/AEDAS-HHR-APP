@@ -1,0 +1,82 @@
+{% extends "header.html" %}
+{% load static%}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive maps for Django web apps</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        
+        .sidenav {
+          width: 270px;
+          position: fixed;
+          z-index: 1;
+          top: 20px;
+          left: 10px;
+          background: rgb(253, 252, 252);
+          overflow-x: hidden;
+          padding: 8px 0;
+        }
+        
+        .sidenav a {
+          padding: 6px 8px 6px 16px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #07ca48;
+          display: block;
+        }
+        
+        .sidenav a:hover {
+          color: #058a22;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="/map_data">Live Maps!</a>
+        <a href="/map_drought1">Outlooks & Forecasts</a>
+        <a href="/map_tool">Tools</a>
+    </div>
+    <div class="col-lg-10 mb-5" style="padding-top: 72px; margin-left: 160px;">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <p> <a href="/map_data" class="btn btn-primary">Drought Monitoring</a> <a href="/vdri_monitor" class="btn btn-primary">VDRI</a> <a href="/esi_monitor" class="btn btn-primary">ESI</a> <a href="/eddi_monitor" class="btn btn-primary">EDDI</a> <a href="/qdri_monitor" class="btn btn-primary">QDRI</a> <a href="/map_groundwater2" class="btn btn-primary">USGS Groundwater Watch</a> <a href="/map_nasa" class="btn btn-primary">NASA GRACE</a> <a href="/map_cmi" class="btn btn-primary">CMI</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            Drought Condition Monitoring Observer Reports(CMOR) 2020 for Crops
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <iframe width='810px' height='630px' src='https://universityofne.maps.arcgis.com/apps/TimeAware/index.html?appid=37e05a1556414e958fdef415b6b4ae36' frameborder='0' scrolling='no'></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

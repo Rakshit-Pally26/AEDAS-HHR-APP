@@ -1,0 +1,47 @@
+{% extends "header.html" %}
+{% load static%}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive maps for Django web apps</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+    <div class="col-lg-12 mb-5" style="padding-top: 72px;">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <p><a href="/drought_monitor" class="btn btn-primary">Drought Monitoring</a> <a href="/vdri_monitor" class="btn btn-primary">VDRI</a> <a href="/qdri_monitor" class="btn btn-primary">QDRI</a> <a href="/crop_monitor" class="btn btn-primary">Crop Monitoring</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            Drought Monitoring
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body" style="width:120vw; height:124vh;">
+                    <img style="width: 990px; height: 745px" src="https://droughtmonitor.unl.edu/data/png/current/current_usdm.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}
